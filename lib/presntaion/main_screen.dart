@@ -8,15 +8,27 @@ import '../core/resources/manager_height.dart';
 import '../core/resources/manager_icon_sizes.dart';
 import '../core/resources/manager_raduis.dart';
 import '../core/resources/manager_width.dart';
-class mainScreen extends StatelessWidget {
-  const mainScreen({super.key});
+class mainScreen extends StatefulWidget {
+   mainScreen({super.key});
+
+  @override
+  State<mainScreen> createState() => _mainScreenState();
+}
+
+class _mainScreenState extends State<mainScreen> {
+  int counter=0;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       extendBodyBehindAppBar: true
       ,floatingActionButton: FloatingActionButton(
-      onPressed: () {},
+      onPressed: () {
+        setState((){
+          counter++;
+        });
+
+      },
       child: Icon(Icons.add),
     ),
       appBar: AppBar(
@@ -59,7 +71,7 @@ class mainScreen extends StatelessWidget {
                   ManagerRadius.r12,
                 ),
               ),
-              child: baseText(text: '1'),
+              child: baseText(text:'$counter'),
             ),
           ),
         ],

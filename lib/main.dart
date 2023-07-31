@@ -30,7 +30,7 @@ class MyApp extends StatelessWidget {
       initialRoute: Routes.splashScreen,
       routes: {
         Routes.splashScreen: (context) => const SplashScreen(),
-        Routes.mainScreen: (context) => const mainScreen(),
+        Routes.mainScreen: (context) =>  mainScreen(),
         Routes.aboutScreen: (context) =>  AboutScreen(),
       },
     );
