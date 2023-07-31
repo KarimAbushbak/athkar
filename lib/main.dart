@@ -1,6 +1,6 @@
-import 'package:athkar/about_screen.dart';
-import 'package:athkar/main_screen.dart';
-import 'package:athkar/splash_screen.dart';
+import 'package:athkar/presntaion/about_screen.dart';
+import 'package:athkar/presntaion/main_screen.dart';
+import 'package:athkar/presntaion/splash_screen.dart';
 import 'package:flutter/material.dart';
 
 import 'core/resources/manager_font_sizes.dart';
@@ -31,7 +31,7 @@ class MyApp extends StatelessWidget {
       routes: {
         Routes.splashScreen: (context) => const SplashScreen(),
         Routes.mainScreen: (context) => const mainScreen(),
-        Routes.aboutScreen: (context) => const AboutScreen(),
+        Routes.aboutScreen: (context) =>  AboutScreen(),
       },
     );
 

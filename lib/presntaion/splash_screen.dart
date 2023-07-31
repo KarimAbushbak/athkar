@@ -2,9 +2,11 @@
 import 'package:athkar/core/resources/manager_strings.dart';
 import 'package:flutter/material.dart';
 
-import 'core/resources/manager_font_sizes.dart';
-import 'core/resources/manager_font_weight.dart';
-import 'core/routes.dart';
+import '../core/resources/manager_colors.dart';
+import '../core/resources/manager_font_sizes.dart';
+import '../core/resources/manager_font_weight.dart';
+import '../core/routes.dart';
+import '../core/widgets/base_text.dart';
 
 
 class SplashScreen extends StatefulWidget {
@@ -19,7 +21,7 @@ class _SplashScreenState extends State<SplashScreen> {
   void initState() {
     super.initState();
     print('Hello I am init state');
-    Future.delayed(Duration(seconds: 3), () {
+    Future.delayed(Duration(seconds: 5), () {
       print('Hello I am in Future');
       // Navigator.pushNamed(context, Routes.bioScreen);
       Navigator.pushReplacementNamed(context, Routes.mainScreen);
@@ -40,16 +42,23 @@ class _SplashScreenState extends State<SplashScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      body: Center(
-        child: Text(
-          ManagerStrings.appName,
-          style: TextStyle(
-            fontSize: ManagerFontSizes.s24,
-            fontWeight: ManagerFontWeight.w600,
+    return Scaffold(
+      body: Container(
+        alignment: Alignment.center,
+        decoration: BoxDecoration(
+          gradient: LinearGradient(
+            colors: [
+              ManagerColors.secondaryColor,
+              ManagerColors.brown200,
+              ManagerColors.white70,
+            ],
+            begin: AlignmentDirectional.topStart,
+            end: AlignmentDirectional.bottomEnd,
           ),
         ),
+        child: baseText(),
       ),
+
     );
   }
 

@@ -1,18 +1,15 @@
 
 import 'package:flutter/material.dart';
 
-import 'core/resources/manager_font_sizes.dart';
+import '../core/resources/manager_font_sizes.dart';
 
-class AboutScreen extends StatefulWidget {
-  const AboutScreen({Key? key}) : super(key: key);
+class AboutScreen extends StatelessWidget {
+   AboutScreen({Key? key}) : super(key: key);
 
-  @override
-  State<AboutScreen> createState() => _AboutScreenState();
-}
-
-class _AboutScreenState extends State<AboutScreen> {
   String? description;
+
   String? name;
+
   String? url;
 
   @override
